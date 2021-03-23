@@ -1,15 +1,18 @@
 import './App.css';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import Leader from './components/Leader/Leader';
-
+import Party from './components/Party/Party';
 
 function App() {
   return (
     <div>
       <Grid container>
         <Grid item xs={0} sm={2} />
-        <Grid item container xs={12} sm={8} justify='space-between' >
-          <Grid item>
+        <Grid item container xs={12} sm={8} justify='space-around' spacing={5}>
+          <Grid item xs={12} align={"center"}>
+            <Typography variant="h1">Deutsche Politik</Typography>
+          </Grid>
+          <Grid item >
             <Leader
               title={"President"}
               name={"Frank-Walter Steinmeier"}
@@ -27,6 +30,10 @@ function App() {
               }
             />
           </Grid>
+          <Grid item xs={12} align={"center"} >
+            <Party name="CDU" leader="Angela Merkel" eu="EPP" color="black" />
+          </Grid>
+     
         </Grid>
         <Grid item xs={0} sm={2} />
       </Grid>
