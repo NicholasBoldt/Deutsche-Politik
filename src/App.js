@@ -2,6 +2,8 @@ import './App.css';
 import { Grid, Typography } from '@material-ui/core';
 import Leader from './components/Leader/Leader';
 import Party from './components/Party/Party';
+import PartyList from './components/PartyList/PartyList';
+import StateList from './components/StateList/StateList';
 
 function App() {
   return (
@@ -31,7 +33,12 @@ function App() {
             />
           </Grid>
           <Grid item xs={12} align={"center"} >
-            <Party name="CDU" leader="Angela Merkel" eu="EPP" color="black" />
+            <Typography variant="h5">Parties</Typography>
+            <PartyList />
+          </Grid>
+          <Grid item xs={12} align={"center"} >
+            <Typography variant="h5">States</Typography>
+            <StateList />
           </Grid>
      
         </Grid>
