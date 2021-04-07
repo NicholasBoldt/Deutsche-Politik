@@ -1,11 +1,21 @@
 import './App.css';
+import React, { useState, useEffect } from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import Leader from './components/Leader/Leader';
 import Party from './components/Party/Party';
 import PartyList from './components/PartyList/PartyList';
 import StateList from './components/StateList/StateList';
+import germanAPI from './utiles/germanAPI';
 
 function App() {
+  const [chancellorName, setChancellorName] = useState();
+
+  useEffect(() => {
+      console.log("go")
+      console.log(germanAPI.getChancellor());
+      console.log("end");
+  });
+
   return (
     <div>
       <Grid container>
