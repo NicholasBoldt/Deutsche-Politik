@@ -3,7 +3,7 @@ const router = express.Router();
 const germanCtrl = require('../controllers/germanScraper');
 
 /*---------- Public Routes ----------*/
-router.get('/chancellor', germanCtrl.requestPromise);
+router.get('/chancellor', germanCtrl.scrapChancellor);
 
 /*---------- Protected Routes ----------*/
 
