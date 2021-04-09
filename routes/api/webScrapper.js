@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const germanCtrl = require('../controllers/germanScraper');
+const germanCtrl = require('../../controllers/germanScraper');
 
 /*---------- Public Routes ----------*/
 router.get('/chancellor', germanCtrl.scrapChancellor);
