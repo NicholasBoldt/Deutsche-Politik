@@ -19,8 +19,8 @@ function App() {
   return (
     <div>
       <Grid container>
-        <Grid item xs={0} sm={2} />
-        <Grid item container xs={12} sm={8} justify='space-around' spacing={5}>
+        <Grid item xs={0} sm={1} />
+        <Grid item container xs={12} sm={10} justify='space-around' spacing={5}>
           <Grid item xs={12} align={"center"}>
             <Typography variant="h1">Deutsche Politik</Typography>
           </Grid>
@@ -52,7 +52,7 @@ function App() {
           </Grid>
      
         </Grid>
-        <Grid item xs={0} sm={2} />
+        <Grid item xs={0} sm={1} />
       </Grid>
     </div>
   );
