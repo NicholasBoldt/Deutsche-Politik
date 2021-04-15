@@ -4,6 +4,7 @@ const germanCtrl = require('../../controllers/germanInfo');
 
 /*---------- Public Routes ----------*/
 router.get('/chancellor', germanCtrl.chancellor);
+router.get('/seed', germanCtrl.createChancellor);
 
 /*---------- Protected Routes ----------*/
 

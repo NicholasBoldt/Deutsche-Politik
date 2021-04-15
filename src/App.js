@@ -8,16 +8,19 @@ import StateList from './components/StateList/StateList';
 import germanAPI from './utiles/germanAPI';
 
 function App() {
-  const [chancellorName, setChancellorName] = useState();
+  const [chancellor, setChancellor] = useState();
 
   useEffect(() => {
-      console.log("go")
-      console.log(germanAPI.getChancellor());
-      console.log("end");
-  });
+    const fetchData = async () => {
+      const result = await germanAPI.getChancellor();
+      setChancellor(result);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>
+  
       <Grid container>
         <Grid item xs={0} sm={1} />
         <Grid item container xs={12} sm={10} justify='space-around' spacing={5}>
@@ -36,7 +39,8 @@ function App() {
           <Grid item>
             <Leader
               title={"Chancellor"}
-              name={"Angela Merkel"}
+              name={chancellor ? chancellor.name : "loading"}
+              party={chancellor ? chancellor.party : ""}
               img={
                 "https://upload.wikimedia.org/wikipedia/commons/0/0f/Angela_Merkel_2019_cropped.jpg"
               }

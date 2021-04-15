@@ -39,6 +39,9 @@ function Leader(props) {
             <Typography gutterBottom variant="h5" align="center" component="h2">
               {props.name}
             </Typography>
+            <Typography gutterBottom variant="h6" align="center" component="h2">
+              Party: {props.party}
+            </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               {props.description}
             </Typography>
