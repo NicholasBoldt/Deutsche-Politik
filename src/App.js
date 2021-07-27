@@ -28,7 +28,6 @@ const App = () => {
           name: retrievedData.states[key].name,
         });
       }
-      console.log(retrievedData);
       setChancellor(retrievedData.chancellor);
       setPresident(retrievedData.president);
       setStates(loadedStates);
