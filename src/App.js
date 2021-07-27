@@ -1,5 +1,7 @@
 import {useState, useEffect, useCallback} from 'react';
-import './App.css';
+import Leader from './components/Individual/Leader';
+
+import classes from './App.module.css'
 
 const App = () => {
   const [chancellor, setChancellor] = useState()
@@ -36,20 +38,36 @@ const App = () => {
 
   const loadedData = (
     <div>
-      <p>Chancellor: {chancellor && chancellor.name}</p>
-      <p>President: {president && president.name}</p>
-      <p>States: </p>
-      <ul>{states && states.map((state) => <li>{state.name}</li>)}</ul>
+      <div className={classes.leaders}>
+        {chancellor && (
+          <Leader
+            title="German Chancellor"
+            name={chancellor.name}
+            party={chancellor.party}
+            img={chancellor.img}
+          />
+        )}
+        {president && (
+          <Leader
+            title="German President"
+            name={president.name}
+            party={president.party}
+            img={president.img}
+          />
+        )}
+      </div>
+
+      {/* <p>States: </p>
+      <ul>{states && states.map((state) => <li>{state.name}</li>)}</ul> */}
     </div>
   );
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header className={classes.header}>
         Deutsche Politik
+        </header>
         {loadedData}
-        <button></button>
-      </header>
     </div>
   );
 }
