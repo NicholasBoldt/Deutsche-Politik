@@ -1,12 +1,14 @@
-import {useState, useEffect, useCallback} from 'react';
-import Leader from './components/Individual/Leader';
+import { useState, useEffect } from "react";
+import Leader from "./components/Individual/Leader";
+import PartyList from "./components/Party/PartyList";
 
-import classes from './App.module.css'
+import classes from "./App.module.css";
 
 const App = () => {
-  const [chancellor, setChancellor] = useState()
-  const [president, setPresident] = useState()
-  const [states, setStates] = useState([])
+  const [chancellor, setChancellor] = useState();
+  const [president, setPresident] = useState();
+  const [states, setStates] = useState([]);
+  const [parties, setParties] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -21,16 +23,28 @@ const App = () => {
       const retrievedData = await response.json();
 
       const loadedStates = [];
-  
-      for(const key in retrievedData.states) {
+
+      for (const key in retrievedData.states) {
         loadedStates.push({
           id: key,
           name: retrievedData.states[key].name,
         });
       }
+
+      const loadedParties = [];
+
+      for (const key in retrievedData.parties) {
+        loadedParties.push({
+          id: key,
+          name: retrievedData.parties[key].name,
+          ideology: retrievedData.parties[key].ideology,
+          leader: retrievedData.parties[key].leader,
+        });
+      }
       setChancellor(retrievedData.chancellor);
       setPresident(retrievedData.president);
       setStates(loadedStates);
+      setParties(loadedParties);
     };
     getData();
   }, []);
@@ -55,20 +69,17 @@ const App = () => {
           />
         )}
       </div>
-
-      {/* <p>States: </p>
-      <ul>{states && states.map((state) => <li>{state.name}</li>)}</ul> */}
+      <PartyList parties={parties}/>
     </div>
   );
+
 
   return (
     <div>
-      <header className={classes.header}>
-        Deutsche Politik
-        </header>
-        {loadedData}
+      <header className={classes.header}>Deutsche Politik</header>
+      {loadedData}
     </div>
   );
-}
+};
 
 export default App;
