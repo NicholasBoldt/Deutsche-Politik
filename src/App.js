@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Leader from "./components/Individual/Leader";
 import PartyList from "./components/Party/PartyList";
+import StateList from "./components/State/StateList";
 
 import classes from "./App.module.css";
 
@@ -70,6 +71,7 @@ const App = () => {
         )}
       </div>
       <PartyList parties={parties}/>
+      <StateList states={states}/>
     </div>
   );
 
@@ -77,6 +79,7 @@ const App = () => {
   return (
     <div>
       <header className={classes.header}>Deutsche Politik</header>
+      <h2 align="center">Federal Parliamentry Republic</h2>
       {loadedData}
     </div>
   );

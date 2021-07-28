@@ -3,7 +3,7 @@ import classes from "./PartyList.module.css";
 const PartyList = (props) => {
   return (
     <div>
-        <h2>Political Parties</h2>
+      <h2>Political Parties</h2>
       <table align="center">
         <thead>
           <tr>
