@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { Route, Link } from 'react-router-dom';
 import Leader from "./components/Individual/Leader";
 import PartyList from "./components/Party/PartyList";
 import StateList from "./components/State/StateList";
 
 import classes from "./App.module.css";
+import ChancellorPage from "./pages/ChancellorPage";
 
 const App = () => {
   const [chancellor, setChancellor] = useState();
@@ -53,6 +55,7 @@ const App = () => {
   const loadedData = (
     <div>
       <div className={classes.leaders}>
+      <Link className={classes.link}to="/chancellor">
         {chancellor && (
           <Leader
             title="German Chancellor"
@@ -60,7 +63,8 @@ const App = () => {
             party={chancellor.party}
             img={chancellor.img}
           />
-        )}
+        )}</Link>
+     
         {president && (
           <Leader
             title="German President"
@@ -72,15 +76,29 @@ const App = () => {
       </div>
       <PartyList parties={parties}/>
       <StateList states={states}/>
+  
     </div>
   );
 
 
   return (
     <div>
-      <header className={classes.header}>Deutsche Politik</header>
-      <h2 align="center">Federal Parliamentry Republic</h2>
-      {loadedData}
+      <Link className={classes.link} to="/">
+        <header className={classes.header}>Deutsche Politik</header>
+      </Link>
+      <Route path="/" exact>
+        {loadedData}
+      </Route>
+      <Route path="/chancellor">
+        {chancellor && <ChancellorPage
+          title="German Chancellor"
+          name={chancellor.name}
+          party={chancellor.party}
+          img={chancellor.img}
+          desc={chancellor.description}
+          incumbent_desc={chancellor.incumbent_desc}
+        />}
+      </Route>
     </div>
   );
 };

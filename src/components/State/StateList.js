@@ -9,6 +9,7 @@ const StateList = (props) => {
           <tr>
             <th>Initals</th>
             <th>Name</th>
+            <th>Capital</th>
             <th>Government</th>
             <th>Leader</th>
           </tr>
