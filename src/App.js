@@ -5,7 +5,7 @@ import PartyList from "./components/Party/PartyList";
 import StateList from "./components/State/StateList";
 
 import classes from "./App.module.css";
-import ChancellorPage from "./pages/ChancellorPage";
+import LeaderPage from "./pages/LeaderPage";
 
 const App = () => {
   const [chancellor, setChancellor] = useState();
@@ -16,7 +16,7 @@ const App = () => {
   useEffect(() => {
     const getData = async () => {
       const response = await fetch(
-        "https://deutsche-politk-default-rtdb.firebaseio.com./.json",
+        "https://deutsche-politk-default-rtdb.firebaseio.com/.json",
         {
           headers: {
             "Content-Type": "application/json",
@@ -55,28 +55,30 @@ const App = () => {
   const loadedData = (
     <div>
       <div className={classes.leaders}>
-      <Link className={classes.link}to="/chancellor">
-        {chancellor && (
-          <Leader
-            title="German Chancellor"
-            name={chancellor.name}
-            party={chancellor.party}
-            img={chancellor.img}
-          />
-        )}</Link>
-     
-        {president && (
-          <Leader
-            title="German President"
-            name={president.name}
-            party={president.party}
-            img={president.img}
-          />
-        )}
+        <Link className={classes.link} to="/chancellor">
+          {chancellor && (
+            <Leader
+              title="German Chancellor"
+              name={chancellor.name}
+              party={chancellor.party}
+              img={chancellor.img}
+            />
+          )}
+        </Link>
+
+        <Link className={classes.link} to="/president">
+          {president && (
+            <Leader
+              title="German President"
+              name={president.name}
+              party={president.party}
+              img={president.img}
+            />
+          )}
+        </Link>
       </div>
-      <PartyList parties={parties}/>
-      <StateList states={states}/>
-  
+      <PartyList parties={parties} />
+      <StateList states={states} />
     </div>
   );
 
@@ -90,13 +92,23 @@ const App = () => {
         {loadedData}
       </Route>
       <Route path="/chancellor">
-        {chancellor && <ChancellorPage
+        {chancellor && <LeaderPage
           title="German Chancellor"
           name={chancellor.name}
           party={chancellor.party}
           img={chancellor.img}
           desc={chancellor.description}
           incumbent_desc={chancellor.incumbent_desc}
+        />}
+      </Route>
+      <Route path="/president">
+        {president && <LeaderPage
+          title="German President"
+          name={president.name}
+          party={president.party}
+          img={president.img}
+          desc={president.description}
+          incumbent_desc={president.incumbent_desc}
         />}
       </Route>
     </div>

@@ -1,8 +1,8 @@
-import classes from './ChancellorPage.module.css';
+import classes from './LeaderPage.module.css';
 
-const ChancellorPage = props => {   
+const LeaderPage = props => {   
     return (
-      <div className={classes.chancellorPage}>
+      <div className={classes['leader-page']}>
         <div className={classes.section}>
           <img
             src={props.img}
@@ -23,4 +23,4 @@ const ChancellorPage = props => {
     );
 }
 
-export default ChancellorPage;
+export default LeaderPage;
