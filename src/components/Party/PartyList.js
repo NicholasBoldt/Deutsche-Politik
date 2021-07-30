@@ -14,7 +14,7 @@ const PartyList = (props) => {
           </tr>
         </thead>
 
-        <tbody align="center">
+        <tbody align="left">
           {props.parties.map((party) => (
             <tr>
               <td>{party.id}</td>

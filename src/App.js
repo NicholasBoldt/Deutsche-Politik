@@ -6,6 +6,7 @@ import StateList from "./components/State/StateList";
 
 import classes from "./App.module.css";
 import LeaderPage from "./pages/LeaderPage";
+import PartyPage from "./pages/PartyPage";
 
 const App = () => {
   const [chancellor, setChancellor] = useState();
@@ -92,24 +93,28 @@ const App = () => {
         {loadedData}
       </Route>
       <Route path="/chancellor">
-        {chancellor && <LeaderPage
-          title="German Chancellor"
-          name={chancellor.name}
-          party={chancellor.party}
-          img={chancellor.img}
-          desc={chancellor.description}
-          incumbent_desc={chancellor.incumbent_desc}
-        />}
+        {chancellor && (
+          <LeaderPage
+            title="German Chancellor"
+            name={chancellor.name}
+            party={chancellor.party}
+            img={chancellor.img}
+            desc={chancellor.description}
+            incumbent_desc={chancellor.incumbent_desc}
+          />
+        )}
       </Route>
       <Route path="/president">
-        {president && <LeaderPage
-          title="German President"
-          name={president.name}
-          party={president.party}
-          img={president.img}
-          desc={president.description}
-          incumbent_desc={president.incumbent_desc}
-        />}
+        {president && (
+          <LeaderPage
+            title="German President"
+            name={president.name}
+            party={president.party}
+            img={president.img}
+            desc={president.description}
+            incumbent_desc={president.incumbent_desc}
+          />
+        )}
       </Route>
     </div>
   );

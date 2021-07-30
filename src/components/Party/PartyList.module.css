@@ -1,7 +1,16 @@
-.partyTable {
-    text-align: center;
+.table {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  justify-self: center;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
+}
+
+.party-list {
+    margin: 0 auto;
+    width: 70%;
+
 }
