@@ -116,6 +116,10 @@ const App = () => {
           />
         )}
       </Route>
+      <Route path="/parties/:partyId">
+        {parties && <PartyPage parties={parties}/>}
+    
+      </Route>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import classes from "./PartyList.module.css";
+import { Link } from "react-router-dom";
 
 const PartyList = (props) => {
   return (
@@ -16,8 +17,9 @@ const PartyList = (props) => {
 
         <tbody align="left">
           {props.parties.map((party) => (
+            
             <tr>
-              <td>{party.id}</td>
+              <td><Link className={classes.link} to={`/parties/${party.id}`}>{party.id}</Link></td>
               <td>{party.name}</td>
               <td>{party.ideology}</td>
               <td>{party.leader}</td>

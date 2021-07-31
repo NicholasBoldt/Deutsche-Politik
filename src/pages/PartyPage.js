@@ -1,11 +1,18 @@
+import classes from './PartyPage.module.css'
+import { useParams } from "react-router-dom";
+
+
 const PartyPage = props => {
+    const params = useParams();
+    const party = props.parties.find(party => party.id === params.partyId);
+
     return <div>
-        <div>{props.name}</div>
-        <div>{props.initals}</div>
-        <div>{props.leader}</div>
-        <div>{props.ideology}</div>
-        <div>{props.desc}</div>
-        <img src={props.logo} alt="party logo" height='250' width='250'/>
+        <div>{party.name}</div>
+        <div>{party.initals}</div>
+        <div>{party.leader}</div>
+        <div>{party.ideology}</div>
+        <div>{party.desc}</div>
+        <img src={party.logo} alt="party logo" height='250' width='250'/>
     </div>;
 }
 
