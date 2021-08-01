@@ -1,8 +1,9 @@
 import classes from './LeaderPage.module.css';
+import Card from '../components/UI/Card';
 
 const LeaderPage = props => {   
     return (
-      <div className={classes['leader-page']}>
+      <Card className={classes['leader-page']}>
         <div className={classes.section}>
           <img
             src={props.img}
@@ -19,7 +20,7 @@ const LeaderPage = props => {
             <div className={classes.text}>{props.incumbent_desc}</div>
           </div>
         </div>
-      </div>
+      </Card>
     );
 }
 

@@ -11,8 +11,7 @@
 }
 
 .leader-page {
-    margin: 60px auto;
-    width: 70%;
+    margin: 0 auto;
 }
 
 .section {
@@ -28,5 +27,6 @@
 
 .text {
     font-size: 20px;
+    min-width: 50px;
 }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Redirect } from 'react-router-dom';
 import Leader from "./components/Individual/Leader";
 import PartyList from "./components/Party/PartyList";
 import StateList from "./components/State/StateList";
@@ -119,6 +119,7 @@ const App = () => {
       </Route>
       <Route path="/parties/:partyId">
         {parties && <PartyPage parties={parties}/>}
+        {!parties && <Redirect to='/'/>}
       </Route>
       <Route path="/states/:stateId">
         {states && <StatePage states={states}/>}

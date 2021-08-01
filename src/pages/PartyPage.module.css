@@ -1,7 +1,5 @@
 .party-page {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    margin: 0 auto;
 }
 
 .title {
@@ -17,4 +15,10 @@
 
 .text {
     font-size: 20px;
+}
+
+.section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
