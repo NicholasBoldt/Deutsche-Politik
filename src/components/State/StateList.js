@@ -1,5 +1,7 @@
 // import classes from "./StateList.module.css";
 
+const { Link } = require("react-router-dom")
+
 const StateList = (props) => {
   return (
     <div>
@@ -18,7 +20,7 @@ const StateList = (props) => {
         <tbody align="center">
           {props.states.map((state) => (
             <tr>
-              <td>{state.id}</td>
+              <td><Link to={`/states/${state.id}`}>{state.id}</Link></td>
               <td>{state.name}</td>
             
             </tr>

@@ -20,9 +20,9 @@ const PartyList = (props) => {
             
             <tr>
               <td><Link className={classes.link} to={`/parties/${party.id}`}>{party.id}</Link></td>
-              <td>{party.name}</td>
-              <td>{party.ideology}</td>
-              <td>{party.leader}</td>
+              <td align="center">{party.name}</td>
+              <td align="center">{party.ideology}</td>
+              <td align="right">{party.leader}</td>
             </tr>
           ))}
         </tbody>

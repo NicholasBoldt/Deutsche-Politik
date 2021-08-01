@@ -6,14 +6,18 @@ const PartyPage = props => {
     const params = useParams();
     const party = props.parties.find(party => party.id === params.partyId);
 
-    return <div>
-        <div>{party.name}</div>
-        <div>{party.initals}</div>
-        <div>{party.leader}</div>
-        <div>{party.ideology}</div>
-        <div>{party.desc}</div>
-        <img src={party.logo} alt="party logo" height='250' width='250'/>
-    </div>;
+    return (
+      <div className={classes["party-page"]}>
+        <div className={classes.info}>
+          <div>{party.leader}</div>
+          <div>{party.ideology}</div>
+        </div>
+        <div className={classes.description}>
+        <div className={classes.title}>{party.name}</div>
+          <div>{party.desc}</div>
+        </div>
+      </div>
+    );
 }
 
 export default PartyPage;

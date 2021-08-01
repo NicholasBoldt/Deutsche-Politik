@@ -7,6 +7,7 @@ import StateList from "./components/State/StateList";
 import classes from "./App.module.css";
 import LeaderPage from "./pages/LeaderPage";
 import PartyPage from "./pages/PartyPage";
+import StatePage from "./pages/StatePage";
 
 const App = () => {
   const [chancellor, setChancellor] = useState();
@@ -118,7 +119,9 @@ const App = () => {
       </Route>
       <Route path="/parties/:partyId">
         {parties && <PartyPage parties={parties}/>}
-    
+      </Route>
+      <Route path="/states/:stateId">
+        {states && <StatePage states={states}/>}
       </Route>
     </div>
   );
