@@ -6,7 +6,7 @@ const PartyList = (props) => {
     <div>
       <h2>Political Parties</h2>
       <table align="center">
-        <thead>
+        <thead align='center'>
           <tr>
             <th>Label</th>
             <th>Party</th>
@@ -17,12 +17,12 @@ const PartyList = (props) => {
 
         <tbody align="left">
           {props.parties.map((party) => (
-            
+      
             <tr>
               <td><Link className={classes.link} to={`/parties/${party.id}`}>{party.id}</Link></td>
-              <td align="center">{party.name}</td>
-              <td align="center">{party.ideology}</td>
-              <td align="right">{party.leader}</td>
+              <td align="center"><Link className={classes.link} to={`/parties/${party.id}`}>{party.name}</Link></td>
+              <td align="center"><Link className={classes.link} to={`/parties/${party.id}`}>{party.ideology}</Link></td>
+              <td align="center"><Link className={classes.link} to={`/parties/${party.id}`}>{party.leader}</Link></td>
             </tr>
           ))}
         </tbody>

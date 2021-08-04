@@ -4,7 +4,7 @@ const Leader = props => {
 
     return <div>
         <div className={classes.title}>{props.title}</div>
-        <img src={props.img} alt={props.title + ' img'} height="500" width='350'/>
+        <img className='leader-img' src={props.img} alt={props.title + ' img'} height="500" width='350'/>
         <div className={classes.name}>{props.name} - {props.party}</div>
     </div>;
 

@@ -33,6 +33,10 @@ const App = () => {
         loadedStates.push({
           id: key,
           name: retrievedData.states[key].name,
+          capital: retrievedData.states[key].capital,
+          leader: retrievedData.states[key].leader,
+          government: retrievedData.states[key].government,
+          flag: retrievedData.states[key].flag,
         });
       }
 
