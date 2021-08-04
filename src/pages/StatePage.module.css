@@ -9,13 +9,19 @@
 }
 
 .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 60%;
+    font-size: 20px;
 
 }
 
 .text {
     font-size: 20px;
+    width: 90%;
 }
+
 
 .section {
     display: flex;

@@ -8,6 +8,7 @@ import classes from "./App.module.css";
 import LeaderPage from "./pages/LeaderPage";
 import PartyPage from "./pages/PartyPage";
 import StatePage from "./pages/StatePage";
+import Card from "./components/UI/Card";
 
 const App = () => {
   const [chancellor, setChancellor] = useState();
@@ -37,6 +38,8 @@ const App = () => {
           leader: retrievedData.states[key].leader,
           government: retrievedData.states[key].government,
           flag: retrievedData.states[key].flag,
+          desc: retrievedData.states[key].description,
+          map: retrievedData.states[key].map
         });
       }
 
@@ -60,7 +63,7 @@ const App = () => {
 
   const loadedData = (
     <div>
-      <div className={classes.leaders}>
+      <Card className={classes.leaders}>
         <Link className={classes.link} to="/chancellor">
           {chancellor && (
             <Leader
@@ -82,9 +85,13 @@ const App = () => {
             />
           )}
         </Link>
-      </div>
-      <PartyList parties={parties} />
-      <StateList states={states} />
+      </Card>
+      <Card>
+        <PartyList parties={parties} />
+      </Card>
+      <Card>
+        <StateList states={states} />
+      </Card>
     </div>
   );
 
