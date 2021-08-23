@@ -4,7 +4,7 @@ const webscraper = require('../webscraping/germanscraper');
 async function seeddata(req, res) {
     try {
       const germany = await Germany.findOne();
-      res.status(200).json(data);
+      res.status(200).json(germany);
     } catch (err) {
       console.log(err);
       res.status(400).json(err);

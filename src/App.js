@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     const getData = async () => {
       const response = await fetch(
-        "https://deutsche-politk-default-rtdb.firebaseio.com/.json",
+        "api/seeddata",
         {
           headers: {
             "Content-Type": "application/json",
@@ -32,14 +32,14 @@ const App = () => {
 
       for (const key in retrievedData.states) {
         loadedStates.push({
-          id: key,
+          id: retrievedData.states[key].iso,
           name: retrievedData.states[key].name,
           capital: retrievedData.states[key].capital,
           leader: retrievedData.states[key].leader,
           government: retrievedData.states[key].government,
           flag: retrievedData.states[key].flag,
-          desc: retrievedData.states[key].description,
-          map: retrievedData.states[key].map
+          // desc: retrievedData.states[key].description,
+          // map: retrievedData.states[key].map
         });
       }
 
@@ -47,10 +47,14 @@ const App = () => {
 
       for (const key in retrievedData.parties) {
         loadedParties.push({
-          id: key,
+          id: retrievedData.parties[key].inital,
           name: retrievedData.parties[key].name,
           ideology: retrievedData.parties[key].ideology,
           leader: retrievedData.parties[key].leader,
+          position: retrievedData.parties[key].position,
+          group: retrievedData.parties[key].group,
+          seats: retrievedData.parties[key].seats,
+
         });
       }
       setChancellor(retrievedData.chancellor);
@@ -112,7 +116,7 @@ const App = () => {
             party={chancellor.party}
             img={chancellor.img}
             desc={chancellor.description}
-            incumbent_desc={chancellor.incumbent_desc}
+            incumbent_desc={chancellor.desc}
           />
         )}
       </Route>
@@ -124,7 +128,7 @@ const App = () => {
             party={president.party}
             img={president.img}
             desc={president.description}
-            incumbent_desc={president.incumbent_desc}
+            incumbent_desc={president.desc}
           />
         )}
       </Route>

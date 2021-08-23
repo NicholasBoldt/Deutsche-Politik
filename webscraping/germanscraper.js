@@ -21,7 +21,7 @@ async function scrapLeader(url) {
     const leaderResult = $('b:contains("Incumbent")').children("a");
     const name = leaderResult.text();
     const link = "https://en.wikipedia.org" + leaderResult.attr("href");
-    const img = $("img").first().attr("src");
+    const img = $(".infobox-full-data").find('img').attr("src");
 
     incumbentResult = await scrapIncumbant(link, name);
 
@@ -61,7 +61,7 @@ async function scrapStates() {
     $('table.sortable.wikitable > tbody > tr').each((index, element) => {
         if(index === 0) return true;
         const tds = $(element).find('td');
-        const flag = "https://en.wikipedia.org" + $(tds[1]).find('a').attr('href');
+        const flag = $(tds[1]).find('img').attr('src');
         const name = $(tds[2]).text().replace("\n", "");
         const capital = $(tds[4]).text().replace("\n", "");
         const leader = $(tds[6]).text().replace("\n", "");
@@ -94,14 +94,14 @@ async function scrapParties() {
 
           if(parseInt($(tds[5]).text().split(' ')[0]) > 5) {
             const name = $(tds[1]).children('a').text().replace("\n", "");
-            const initals = $(tds[2]).text().replace("\n", "");
+            const inital = $(tds[2]).text().replace("\n", "");
             const leader = $(tds[3]).text().replace("\n", "");
             const ideology = $(tds[4]).find('a').eq(0).text().replace("\n", "");
             const seats = $(tds[5]).text().split(' ')[0];
             const position = $(tds[7]).text().replace("\n", "");
             const group = $(tds[8]).text().replace("\n", "");
 
-            parties.push({initals, name, leader, ideology, seats, position, group})
+            parties.push({inital, name, leader, ideology, seats, position, group})
           }
       })
   

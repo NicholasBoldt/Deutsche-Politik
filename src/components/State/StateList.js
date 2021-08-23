@@ -10,7 +10,7 @@ const StateList = (props) => {
         <thead>
           <tr>
             <th>Flag</th>
-            <th>Initals</th>
+            <th>ISO</th>
             <th>Name</th>
             <th>Capital</th>
             <th>Leader</th>
@@ -18,7 +18,7 @@ const StateList = (props) => {
           </tr>
         </thead>
 
-        <tbody align="center">
+        <tbody align="left">
           {props.states.map((state) => (
             <tr>
               <td><Link className={classes.link} to={`/states/${state.id}`}><img src={state.flag} height='20px' width='30px' /></Link></td>

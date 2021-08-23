@@ -8,10 +8,13 @@ const PartyList = (props) => {
       <table align="center">
         <thead align='center'>
           <tr>
-            <th>Label</th>
+            <th>Inital</th>
             <th>Party</th>
             <th>Ideology</th>
             <th>Leader</th>
+            <th>Seats</th>
+            <th>Position</th>
+            <th>EU Group</th>
           </tr>
         </thead>
 
@@ -20,9 +23,12 @@ const PartyList = (props) => {
       
             <tr>
               <td><Link className={classes.link} to={`/parties/${party.id}`}>{party.id}</Link></td>
-              <td align="center"><Link className={classes.link} to={`/parties/${party.id}`}>{party.name}</Link></td>
-              <td align="center"><Link className={classes.link} to={`/parties/${party.id}`}>{party.ideology}</Link></td>
-              <td align="center"><Link className={classes.link} to={`/parties/${party.id}`}>{party.leader}</Link></td>
+              <td align="left"><Link className={classes.link} to={`/parties/${party.id}`}>{party.name}</Link></td>
+              <td align="left"><Link className={classes.link} to={`/parties/${party.id}`}>{party.ideology}</Link></td>
+              <td align="left"><Link className={classes.link} to={`/parties/${party.id}`}>{party.leader}</Link></td>
+              <td align="left"><Link className={classes.link} to={`/parties/${party.id}`}>{party.seats}</Link></td>
+              <td align="left"><Link className={classes.link} to={`/parties/${party.id}`}>{party.position}</Link></td>
+              <td align="left"><Link className={classes.link} to={`/parties/${party.id}`}>{party.group}</Link></td>
             </tr>
           ))}
         </tbody>
