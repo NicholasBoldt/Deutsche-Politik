@@ -18,7 +18,7 @@ const LeaderPage = props => {
             <div className={classes.name}>
               {props.name} - {props.party}
             </div>
-            <div className={classes.text}>{props.incumbent_desc}</div>
+            <div className={classes.text}>{props.incumbant_desc}</div>
           </div>
         </div>
       </Card>

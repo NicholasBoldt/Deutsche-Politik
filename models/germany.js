@@ -23,6 +23,7 @@ const leaderSchema = new mongoose.Schema({
     name: String,
     party: String,
     desc: String,
+    incumbant_desc: String,
     link: String,
     img: String,
 });

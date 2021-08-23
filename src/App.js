@@ -115,8 +115,8 @@ const App = () => {
             name={chancellor.name}
             party={chancellor.party}
             img={chancellor.img}
-            desc={chancellor.description}
-            incumbent_desc={chancellor.desc}
+            desc={chancellor.desc}
+            incumbant_desc={chancellor.incumbant_desc}
           />
         )}
       </Route>
@@ -127,8 +127,8 @@ const App = () => {
             name={president.name}
             party={president.party}
             img={president.img}
-            desc={president.description}
-            incumbent_desc={president.desc}
+            desc={president.desc}
+            incumbant_desc={president.incumbant_desc}
           />
         )}
       </Route>

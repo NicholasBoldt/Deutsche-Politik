@@ -22,13 +22,14 @@ async function scrapLeader(url) {
     const name = leaderResult.text();
     const link = "https://en.wikipedia.org" + leaderResult.attr("href");
     const img = $(".infobox-full-data").find('img').attr("src");
+    const desc = $('p').eq(1).text();
 
-    incumbentResult = await scrapIncumbant(link, name);
+    incumbantResult = await scrapIncumbant(link, name);
 
-    const party = incumbentResult["party"];
-    const desc = incumbentResult["desc"];
+    const party = incumbantResult["party"];
+    const incumbant_desc = incumbantResult["incumbant_desc"];
 
-    return { name, link, party, desc, img };
+    return { name, link, party, incumbant_desc, img, desc};
   } catch (err) {
     console.log(err);
   }
@@ -43,9 +44,9 @@ async function scrapIncumbant(url, incumbentName) {
 
     const lastName = incumbentName.split("")[1];
 
-    const desc = $(`p:contains(${lastName})`).first().text();
+    const incumbant_desc = $(`p:contains(${lastName})`).first().text();
 
-    return { party, desc };
+    return { party, incumbant_desc };
   } catch (err) {
     console.log(err);
   }
