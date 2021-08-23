@@ -7,6 +7,7 @@ router.get('/', function (req, res) {
   res.send('Wiki home page');
 })
 
+router.get('/seeddata', apiCtrl.seeddata)
 router.get('/scrapdata', apiCtrl.scrapdata)
 
 module.exports = router;

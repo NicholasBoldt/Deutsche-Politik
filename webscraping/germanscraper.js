@@ -66,9 +66,9 @@ async function scrapStates() {
         const capital = $(tds[4]).text().replace("\n", "");
         const leader = $(tds[6]).text().replace("\n", "");
         const government = $(tds[7]).text().replace("\n", "");
-        const id = $(tds[13]).text().replace("\n", "");
+        const iso = $(tds[13]).text().replace("\n", "");
 
-        states.push({id, name, flag, capital, leader, government})
+        states.push({iso, name, flag, capital, leader, government})
 
     })
 
@@ -94,14 +94,14 @@ async function scrapParties() {
 
           if(parseInt($(tds[5]).text().split(' ')[0]) > 5) {
             const name = $(tds[1]).children('a').text().replace("\n", "");
-            const id = $(tds[2]).text().replace("\n", "");
+            const initals = $(tds[2]).text().replace("\n", "");
             const leader = $(tds[3]).text().replace("\n", "");
             const ideology = $(tds[4]).find('a').eq(0).text().replace("\n", "");
             const seats = $(tds[5]).text().split(' ')[0];
             const position = $(tds[7]).text().replace("\n", "");
             const group = $(tds[8]).text().replace("\n", "");
 
-            parties.push({id, name, leader, ideology, seats, position, group})
+            parties.push({initals, name, leader, ideology, seats, position, group})
           }
       })
   
