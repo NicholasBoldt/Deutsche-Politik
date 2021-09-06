@@ -8,6 +8,7 @@ const PartyPage = props => {
     const party = props.parties.find(party => party.id === params.partyId);
 
     return (
+      
       <Card className={classes["party-page"]}>
         <div className={classes.title}>{party.name}</div>
         <div className={classes.section}>
@@ -16,7 +17,7 @@ const PartyPage = props => {
             <div>{party.ideology}</div>
           </div>
           <div className={classes.description}>
-            <div>This is a huge test on what the hell you can write in here</div>
+            <div>Test</div>
           </div>
         </div>
       </Card>
