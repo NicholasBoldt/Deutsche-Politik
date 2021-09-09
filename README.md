@@ -10,9 +10,9 @@ A MERN stack webscrapping app that grabs all the current german political system
 - A states table that shows all the current german states, capitols, leaders, and coalitions
 
 ## Screenshots
-![ScreenShot](https://raw.githubusercontent.com/NicholasBoldt/Deutsche-Politk/main/assets/screenshots/leaders.png)
-![ScreenShot](https://raw.githubusercontent.com/NicholasBoldt/Deutsche-Politk/main/assets/screenshots/parties.png)
-![ScreenShot](https://raw.githubusercontent.com/NicholasBoldt/Deutsche-Politk/main/assets/screenshots/states.png)
+![ScreenShot](https://raw.githubusercontent.com/NicholasBoldt/Deutsche-Politik/main/assets/screenshots/leaders.png)
+![ScreenShot](https://raw.githubusercontent.com/NicholasBoldt/Deutsche-Politik/main/assets/screenshots/parties.png)
+![ScreenShot](https://raw.githubusercontent.com/NicholasBoldt/Deutsche-Politik/main/assets/screenshots/states.png)
 
 ## Technologies Used
 - HTML
