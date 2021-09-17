@@ -14,7 +14,9 @@ async function seeddata(req, res) {
 async function scrapdata(req, res) {
   try {
     const data = await webscraper();
-    const germany = await Germany.findOneAndUpdate(data);
+    console.log('test')
+    console.log(data)
+    await Germany.findOneAndUpdate({}, data);
     res.status(200).json(data);
   } catch (err) {
     console.log(err);

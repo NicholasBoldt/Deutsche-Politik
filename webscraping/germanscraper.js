@@ -77,6 +77,7 @@ async function scrapStates() {
 
         states.push({iso, name, desc, flag, capital, leader, government})
     })
+    console.log(states)
 
     return states;
 

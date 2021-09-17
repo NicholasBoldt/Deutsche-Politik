@@ -38,7 +38,7 @@ const App = () => {
           leader: retrievedData.states[key].leader,
           government: retrievedData.states[key].government,
           flag: retrievedData.states[key].flag,
-          // desc: retrievedData.states[key].description,
+          desc: retrievedData.states[key].desc,
           // map: retrievedData.states[key].map
         });
       }
