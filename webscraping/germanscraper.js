@@ -59,21 +59,42 @@ async function scrapStates() {
 
     const states = []
     
-    $('table.sortable.wikitable > tbody > tr').each((index, element) => {
+    $('table.sortable.wikitable > tbody > tr').each(async (index, element)=> {
         if(index === 0) return true;
         const tds = $(element).find('td');
         const flag = $(tds[1]).find('img').attr('src');
-        const name = $(tds[2]).text().replace("\n", "");
+        const link = "https://en.wikipedia.org" + $(tds[2]).find('a').attr('href');
+        
+        const stateResult = await scrapState(link);
+
+        const name = stateResult['name'];
+        const desc = stateResult['desc'];
+
         const capital = $(tds[4]).text().replace("\n", "");
         const leader = $(tds[6]).text().replace("\n", "");
         const government = $(tds[7]).text().replace("\n", "");
         const iso = $(tds[13]).text().replace("\n", "");
 
-        states.push({iso, name, flag, capital, leader, government})
-
+        states.push({iso, name, desc, flag, capital, leader, government})
     })
 
     return states;
+
+
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function scrapState(url) {
+  try {
+    const htmlResult = await request.get(url);
+    const $ = await cheerio.load(htmlResult);
+
+    const name = $('#firstHeading').text();
+    const desc = $(`p:contains(${name})`).first().text();
+
+    return {name, desc};
 
 
   } catch (err) {
