@@ -13,6 +13,7 @@ const partySchema = new mongoose.Schema({
 const stateSchema = new mongoose.Schema({
     name: String,
     capital: String,
+    desc: String,
     flag: String,
     leader: String,
     government: String,
