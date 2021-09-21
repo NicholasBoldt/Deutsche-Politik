@@ -59,14 +59,16 @@ async function scrapStates() {
 
     const states = []
     
-    $('table.sortable.wikitable > tbody > tr').each(async (index, element)=> {
+    const trs = $('table.sortable.wikitable > tbody > tr')
+
+    await Promise.all(trs.each(async(index, element) => {
         if(index === 0) return true;
         const tds = $(element).find('td');
         const flag = $(tds[1]).find('img').attr('src');
         const link = "https://en.wikipedia.org" + $(tds[2]).find('a').attr('href');
-        
-        const stateResult = await scrapState(link);
 
+        const stateResult = await scrapState(link);
+      
         const name = stateResult['name'];
         const desc = stateResult['desc'];
 
@@ -76,9 +78,8 @@ async function scrapStates() {
         const iso = $(tds[13]).text().replace("\n", "");
 
         states.push({iso, name, desc, flag, capital, leader, government})
-    })
-    console.log(states)
-
+    }))
+    
     return states;
 
 
@@ -114,7 +115,6 @@ async function scrapParties() {
       $(table[0]).find('tbody > tr').each((index, element) => {
           if(index === 0) return true;
           const tds = $(element).find('td');
-
           if(parseInt($(tds[5]).text().split(' ')[0]) > 5) {
             const name = $(tds[1]).children('a').text().replace("\n", "");
             const inital = $(tds[2]).text().replace("\n", "");
@@ -135,6 +135,7 @@ async function scrapParties() {
       console.log(err);
     }
   }
+
 
   module.exports = main;
 
