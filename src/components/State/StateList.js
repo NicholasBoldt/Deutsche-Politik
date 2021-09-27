@@ -4,9 +4,9 @@ const { Link } = require("react-router-dom")
 
 const StateList = (props) => {
   return (
-    <div>
+    <div className={classes.stateList}>
       <h2>German States</h2>
-      <table align="center">
+      <table  align="center">
         <thead>
           <tr>
             <th>Flag</th>
