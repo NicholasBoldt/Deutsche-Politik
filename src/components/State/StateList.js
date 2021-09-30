@@ -3,6 +3,7 @@ import classes from "./StateList.module.css";
 const { Link } = require("react-router-dom")
 
 const StateList = (props) => {
+
   return (
     <div className={classes.stateList}>
       <h2>German States</h2>
@@ -20,7 +21,7 @@ const StateList = (props) => {
 
         <tbody align="left">
           {props.states.map((state) => (
-            <tr>
+            <tr key={state.id}>
               <td>
                 <Link className={classes.link} to={`/states/${state.id}`}>
                   <img src={state.flag} height="20px" width="30px" />

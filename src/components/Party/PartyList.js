@@ -21,7 +21,7 @@ const PartyList = (props) => {
         <tbody align="left">
           {props.parties.map((party) => (
       
-            <tr>
+            <tr key={party.id}>
               <td><Link className={classes.link} to={`/parties/${party.id}`}>{party.id}</Link></td>
               <td align="left"><Link className={classes.link} to={`/parties/${party.id}`}>{party.name}</Link></td>
               <td align="left"><Link className={classes.link} to={`/parties/${party.id}`}>{party.ideology}</Link></td>
