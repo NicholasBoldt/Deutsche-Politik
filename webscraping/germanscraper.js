@@ -61,7 +61,7 @@ async function scrapStates() {
     
     const trs = $('table.sortable.wikitable > tbody > tr')
 
-    await Promise.all(trs.each(async(index, element) => {
+    await Promise.all(trs.map(async(index, element) => {
         if(index === 0) return true;
         const tds = $(element).find('td');
         const flag = $(tds[1]).find('img').attr('src');
