@@ -4,6 +4,11 @@ const { Link } = require("react-router-dom")
 
 const StateList = (props) => {
 
+  const states = [].concat(props.states)
+    .sort((a, b) => a.id > b.id ? 1 : -1)
+
+    console.log(states)
+
   return (
     <div className={classes.stateList}>
       <h2>German States</h2>
@@ -20,7 +25,7 @@ const StateList = (props) => {
         </thead>
 
         <tbody align="left">
-          {props.states.map((state) => (
+          {states.map((state) => (
             <tr key={state.id}>
               <td>
                 <Link className={classes.link} to={`/states/${state.id}`}>
