@@ -14,7 +14,6 @@
     align-items: center;
     width: 60%;
     font-size: 20px;
-
 }
 
 .text {
@@ -28,3 +27,10 @@
     justify-content: space-around;
     align-items: center;
 }
+
+@media only screen and (max-width: 900px) {
+    .state-page {
+        justify-content: column;
+    }
+
+  }
