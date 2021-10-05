@@ -6,11 +6,9 @@ const LeaderPage = props => {
       <Card className={classes['leader-page']}>
         <div className={classes.section}>
           <img
-            className='leader-img'
+            className={classes.photo}
             src={props.img}
             alt={props.title + " img"}
-            height="500"
-            width="350"
           />
           <div className={classes.info}>
             <div className={classes.title}>{props.title}</div>
