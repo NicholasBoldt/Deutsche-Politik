@@ -11,15 +11,17 @@ const StatePage = props => {
       <Card className={classes["state-page"]}>
         <div className={classes.title}>{state.name}</div>
         <div className={classes.section}>
-          <div className={classes.info}>
-            <div><img src={state.flag} height='200px' width='300px' /></div>
-            <div>Capital: {state.capital}</div>
-            <div>Leader: {state.leader}</div>
-            <div>Government: {state.government}</div>
+          <div className={classes.infobox}>
+            <div>
+              <img src={state.flag} height="200px" width="300px" />
+            </div>
+            <div className={classes.info}>
+              <div>Capital: {state.capital}</div>
+              <div>Leader: {state.leader}</div>
+              <div>Government: {state.government}</div>
+            </div>
           </div>
-          <div className={classes.text}>
-            {state.desc}
-          </div>
+          <div className={classes.text}>{state.desc}</div>
         </div>
       </Card>
     );

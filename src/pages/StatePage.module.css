@@ -8,12 +8,16 @@
     margin-bottom: 10px;
 }
 
-.info {
+.infobox {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 60%;
     font-size: 20px;
+}
+
+.info {
+    margin-left: 50px;
 }
 
 .text {
@@ -29,8 +33,16 @@
 }
 
 @media only screen and (max-width: 900px) {
-    .state-page {
-        justify-content: column;
+    .section {
+        flex-direction: column;
+    }
+
+    .infobox {
+        width: 100%;
+    }
+    
+    .info {
+        margin: 15px 15px;
     }
 
   }
