@@ -24,6 +24,19 @@ async function scrapdata(req, res) {
   }
 }
 
+async function updatedata(req, res) {
+  try {
+    const data = await webscraper();
+    console.log('test')
+    console.log(data)
+    await Germany.findOneAndUpdate({}, data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+updatedata();
+
 module.exports = {
     scrapdata,
     seeddata
