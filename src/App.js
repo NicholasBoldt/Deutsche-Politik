@@ -9,6 +9,7 @@ import LeaderPage from "./pages/LeaderPage";
 import PartyPage from "./pages/PartyPage";
 import StatePage from "./pages/StatePage";
 import Card from "./components/UI/Card";
+import Loading from "./components/UI/Loading";
 
 const App = () => {
   const [chancellor, setChancellor] = useState();
@@ -39,7 +40,6 @@ const App = () => {
           government: retrievedData.states[key].government,
           flag: retrievedData.states[key].flag,
           desc: retrievedData.states[key].desc,
-          // map: retrievedData.states[key].map
         });
       }
 
@@ -105,8 +105,13 @@ const App = () => {
       <Link className={classes.link} to="/">
         <header className={classes.header}>Deutsche Politik</header>
       </Link>
+      <Route path="*" exact>
+        <Redirect to='/' />
+      </Route>
+    
       <Route path="/" exact>
-        {loadedData}
+        {!chancellor && <Loading/>}
+        {chancellor && loadedData}
       </Route>
       <Route path="/chancellor">
         {chancellor && (
